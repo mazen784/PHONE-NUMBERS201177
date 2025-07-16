@@ -3,8 +3,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Numbers</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 3em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+        }
+
+        .number-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .number-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+            font-size: 1.5em;
+            min-width: 60px;
+            justify-content: center;
+        }
+
+        .icons i {
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .icons i:hover {
+            transform: scale(1.2);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        a:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .whatsapp-link {
+            background: #25D366;
+            padding: 8px 15px;
+            font-weight: 600;
+        }
+
+        .whatsapp-link:hover {
+            background: #128C7E;
+        }
+
+        .whatsapp-only {
+            color: #ffd700;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 20px;
+            }
+            .number-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -57,6 +185,15 @@
                 </div>
                 <a href="tel:01098765432">01098765432</a>
                 <a href="https://wa.me/201098765432" class="whatsapp-link">WhatsApp</a>
+            </div>
+
+            <div class="number-card">
+                <div class="icons">
+                    <i class="fas fa-phone"></i>
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <a href="tel:01013875690">01013875690</a>
+                <a href="https://wa.me/201013875690" class="whatsapp-link">WhatsApp</a>
             </div>
         </div>
     </div>
