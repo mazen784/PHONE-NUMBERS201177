@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             margin: 0;
@@ -117,20 +118,41 @@
             font-weight: 600;
         }
 
-        @media (max-width: 600px) {
-            body {
-                align-items: flex-start;
-                padding-top: 20px;
-            }
-            .number-card {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
+        .number-card a:not(.whatsapp-link) {
+            cursor: pointer;
+        }
+
+        .number-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-grow: 1;
+        }
+
+        .copy-icon {
+            cursor: pointer;
+            margin-left: 10px;
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .copy-icon:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: #25D366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: 600;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 100;
         }
     </style>
 </head>
@@ -141,61 +163,92 @@
         <div class="section">
             <h2>Mazen Numbers</h2>
             <div class="number-card">
-                <div class="icons">
-                    <i class="fas fa-phone"></i>
-                    <i class="fab fa-whatsapp"></i>
+                <div class="number-label-container">
+                    <div class="number-display">
+                        <span class="phone-number">01090423513</span>
+                        <i class="fas fa-copy copy-icon" data-number="01090423513"></i>
+                    </div>
+                    <div class="number-type">Phone and WhatsApp</div>
                 </div>
-                <a href="tel:01090423513">01090423513</a>
-                <a href="https://wa.me/201090423513" class="whatsapp-link">WhatsApp</a>
+                <div class="actions">
+                    <a href="tel:01090423513" class="action-btn phone-btn"><i class="fas fa-phone"></i> Phone</a>
+                    <a href="https://wa.me/201090423513" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
 
             <div class="number-card">
-                <div class="icons">
-                    <i class="fas fa-phone"></i>
-                    <i class="fab fa-whatsapp"></i>
+                <div class="number-label-container">
+                    <div class="number-display">
+                        <span class="phone-number">01553445836</span>
+                        <i class="fas fa-copy copy-icon" data-number="01553445836"></i>
+                    </div>
+                    <div class="number-type">Phone and WhatsApp</div>
                 </div>
-                <a href="tel:01553445836">01553445836</a>
-                <a href="https://wa.me/201553445836" class="whatsapp-link">WhatsApp</a>
+                <div class="actions">
+                    <a href="tel:01553445836" class="action-btn phone-btn"><i class="fas fa-phone"></i> Phone</a>
+                    <a href="https://wa.me/201553445836" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
 
             <div class="number-card">
-                <div class="icons">
-                    <i class="fab fa-whatsapp"></i>
+                <div class="number-label-container">
+                    <div class="number-display">
+                        <span class="phone-number">01505616985</span>
+                        <i class="fas fa-copy copy-icon" data-number="01505616985"></i>
+                    </div>
+                    <div class="number-type">WhatsApp Only</div>
                 </div>
-                <span class="whatsapp-only">WhatsApp Only</span>
-                <a href="https://wa.me/201505616985" class="whatsapp-link">01505616985</a>
+                <div class="actions">
+                    <a href="https://wa.me/201505616985" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
         </div>
 
         <div class="section">
             <h2>Asmaa Numbers</h2>
             <div class="number-card">
-                <div class="icons">
-                    <i class="fas fa-phone"></i>
-                    <i class="fab fa-whatsapp"></i>
+                <div class="number-label-container">
+                    <div class="number-display">
+                        <span class="phone-number">01013875690</span>
+                        <i class="fas fa-copy copy-icon" data-number="01013875690"></i>
+                    </div>
+                    <div class="number-type">Phone and WhatsApp</div>
                 </div>
-                <a href="tel:01234567890">01234567890</a>
-                <a href="https://wa.me/201234567890" class="whatsapp-link">WhatsApp</a>
+                <div class="actions">
+                    <a href="tel:01013875690" class="action-btn phone-btn"><i class="fas fa-phone"></i> Phone</a>
+                    <a href="https://wa.me/201013875690" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
 
             <div class="number-card">
-                <div class="icons">
-                    <i class="fas fa-phone"></i>
-                    <i class="fab fa-whatsapp"></i>
+                <div class="number-label-container">
+                    <div class="number-display">
+                        <span class="phone-number">01553516341</span>
+                        <i class="fas fa-copy copy-icon" data-number="01553516341"></i>
+                    </div>
+                    <div class="number-type">Phone and WhatsApp</div>
                 </div>
-                <a href="tel:01098765432">01098765432</a>
-                <a href="https://wa.me/201098765432" class="whatsapp-link">WhatsApp</a>
+                <div class="actions">
+                    <a href="tel:01553516341" class="action-btn phone-btn"><i class="fas fa-phone"></i> Phone</a>
+                    <a href="https://wa.me/201553516341" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
 
             <div class="number-card">
-                <div class="icons">
-                    <i class="fas fa-phone"></i>
-                    <i class="fab fa-whatsapp"></i>
+                <div class="number-label-container">
+                    <div class="number-display">
+                        <span class="phone-number">01212913279</span>
+                        <i class="fas fa-copy copy-icon" data-number="01212913279"></i>
+                    </div>
+                    <div class="number-type phone-only-type">Phone Only</div>
                 </div>
-                <a href="tel:01013875690">01013875690</a>
-                <a href="https://wa.me/201013875690" class="whatsapp-link">WhatsApp</a>
+                <div class="actions">
+                    <a href="tel:01212913279" class="action-btn phone-btn"><i class="fas fa-phone"></i> Phone</a>
+                </div>
             </div>
         </div>
     </div>
+    <div id="tooltip" class="tooltip">Copied!</div>
+    <script src="index.js"></script>
 </body>
 </html>
